@@ -1,0 +1,25 @@
+@media screen and (max-width: 420px) {
+    #holiday {
+        width: auto;
+    }
+    .input {
+        width: -webkit-fill-available;
+    }
+
+    .choose-item-radio {
+        flex-wrap: wrap;
+    }
+
+    #age {
+        width: 185px;
+    }
+
+    .age-text {
+        grid-template-columns: repeat(4, 56px);
+        column-gap: 0;
+    }
+
+    .age-text span::before {
+        bottom: 41px;
+    }
+}

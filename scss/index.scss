@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Uni Neue';
+    src: url('../fonts/UniNeue-Trial-Regular.ttf'),
+    url('../fonts/UniNeue-Trial-Bold.ttf');
+}
+
+@mixin fonts($weight, $size, $height, $color) {
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+
+@mixin displayJustifyAlign($display, $justify, $align) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin bgColorShadowRadius($color, $shadow, $radius) {
+    background: $color;
+    box-shadow: $shadow;
+    border-radius: $radius;
+}
+
+@mixin rectangle($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+%flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+%inputs {
+    @include rectangle(292px, 48px);
+    border: 1px solid #616161;
+    border-radius: 26px;
+    padding: 14px 33px;
+    outline: none;
+    font-family: 'Uni Neue';
+    font-style: normal;
+}
+
+%inputsPlaceholder {
+    font-family: 'Uni Neue';
+    font-style: normal;
+    @include fonts(400, 15px, 133%, #616161);
+}
+
+body {
+    background: #E5E5E5;
+    min-height: 100vh;
+    font-family: 'Uni Neue';
+    font-style: normal;
+    padding-top: 106px;
+}
+
+header {
+    margin-bottom: 118px;
+}
+
+h1 {
+    font-family: 'PT Serif';
+    @include fonts(400, 61px, 81px, #000000);
+    text-align: center;
+}
+
+main {
+    @extend %flexColumn;
+    row-gap: 31px;  
+}
+
+section {
+    margin: 0 auto;
+    padding: 36px 57px;
+    position: relative;
+    width: 878px;
+    @include bgColorShadowRadius(#FFFFFF, 
+                0px 4px 25px rgba(153, 170, 173, 0.25), 19px);
+}
+
+h2 {
+    @include fonts(500, 30px, 41px, #000000);
+    margin-bottom: 15px;
+}
+
+.choose {
+    display: flex;
+    justify-content: space-between;
+}
+
+.choose-box {
+    @extend %flexColumn;
+    row-gap: 33px;
+}
+
+.choose-box-margin {
+    margin-top: 19px;
+    .label {
+        margin-bottom: 19px;
+    }
+}
+
+.choose-item {
+    @extend %flexColumn;
+}
+
+.choose-item-input {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+    margin-top: 11px;
+    .green {
+        @include rectangle(26px, 26px);
+        border: 1px solid #62C117;
+        border-radius: 50%;
+        @include displayJustifyAlign(none, center, center);
+    }
+}
+
+.choose-item-info {
+    @extend %inputsPlaceholder;
+}
+
+#holiday {
+    @extend %inputs;
+    @extend %inputsPlaceholder;
+    option {
+        @extend %inputsPlaceholder;
+        color: #000000;
+    }
+}
+
+.button {
+    @include rectangle(228px, 49px);
+    @include displayJustifyAlign(flex, center, center);
+    @include bgColorShadowRadius(
+                linear-gradient(180deg, #FFC632 0%, #CD9B1C 100%), 
+                0px 10px 30px rgba(223, 153, 17, 0.5), 30px);
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background: #B38612;
+    }
+    span {
+        font-family: 'Uni Neue';
+        font-style: normal;
+        @include fonts(700, 18px, 24px, #FFFFFF);
+        text-align: center;
+    }
+}
+
+.input {
+    @extend %inputs;
+    @include fonts(700, 15px, 133%, #4D4D4D);
+    &::placeholder {
+        @extend %inputsPlaceholder;
+    }
+}
+
+.label {
+    @include fonts(500, 15px, 133%, #000000);
+}
+
+.choose-item-radio {
+    display: flex;
+    column-gap: 32px;
+}
+
+.custom-radio>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.custom-radio>span {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+}
+
+.custom-radio>span::before {
+    content: '';
+    @include rectangle(17px, 17px);
+    border: 2px solid #D8D8D8;
+    border-radius: 50%;
+    display: inline-block;
+    background: radial-gradient(#D8D8D8 40%, transparent 40%);
+}
+
+.custom-radio>input:checked+span::before {
+    border: 2px solid #CC9A1B;
+    background: radial-gradient(#CC9A1B 40%, transparent 40%);
+}
+
+#age {
+    appearance: none;
+    border-top: 2px solid #D8D8D8;
+    @include rectangle(284px, 0px);
+    position: relative;
+    z-index: 1;
+}
+
+#age::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include rectangle(17px, 17px);
+    border: 2px solid #CC9A1B;
+    border-radius: 50%;
+    background: radial-gradient(#CC9A1B 40%, transparent 40%);
+    cursor: pointer;
+}
+
+.age-text {
+    display: grid;
+    grid-template-columns: repeat(4, 71px);
+    column-gap: 18px;
+    margin-top: 10px;
+    span {
+        position: relative;
+        &::before {
+            content: '';
+            @include rectangle(15px, 15px);
+            border: 2px solid #D8D8D8;
+            background: radial-gradient(#D8D8D8 40%, transparent 40%);
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            bottom: 21px;
+            left: -1px;
+            z-index: 0;
+        }
+    }
+}
+
+.button-right {
+    display: flex;
+    justify-content: end;
+    margin-top: 40px;
+}
+
+.submit {
+    margin: 0 auto;
+    display: none;
+}
+
+.mistake {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    display: none;
+}
+
+.result {
+    @include displayJustifyAlign(none, space-between, center);
+    .result-text {
+        @include fonts(400, 20px, 133%, #000000);
+    }
+    .edit {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        column-gap: 15px;
+        padding: 5px;
+        border-radius: 5px;
+        .edit-text {
+            @include fonts(500, 16px, 22px, #7393B1);
+        }
+        &:hover {
+            text-decoration: underline;
+            background: #E5E5E5;
+        }
+    }
+}
+
+@import '_media910.scss';
+@import '_media780.scss';
+@import '_media520.scss';
+@import '_media420.scss';

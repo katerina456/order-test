@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Оформление заказа</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Праздник, с которым поздравляем:</h2>
+            <div class="choose">
+                <select name="holiday" id="holiday">
+                    <option value="no">Выберите праздник</option>
+                    <option value="День рождения">День рождения</option>
+                    <option value="Свадьба">Свадьба</option>
+                </select>
+
+                <button class="button btn" data-part="0">
+                    <span>Сохранить</span>
+                </button>
+                <div class="mistake">Пожалуйста, заполните все поля</div>
+            </div>
+
+            <div class="result">
+                <p class="result-text">День рождения</p>
+                <div class="edit" data-part="0">
+                    <p class="edit-text">Редактировать</p>
+                    <img src="icons/pen.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Кого поздравляем:</h2>
+            <div class="choose">
+                <div class="choose-box">
+                    <div class="choose-item">
+                        <label for="name" class="label">Имя:</label>
+                        <div class="choose-item-input">
+                            <input class="input" type="text" placeholder="Имя" id="name" name="name">
+                            <div class="green">
+                                <img src="icons/Vector.svg" alt="">
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="choose-item">
+                        <label for="surname" class="label">Фамилия:</label>
+                        <div class="choose-item-input">
+                            <input class="input" type="text" placeholder="Фамилия" id="surname" name="surname">
+                            <div class="green">
+                                <img src="icons/Vector.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="choose-box choose-box-margin">
+                    <div class="choose-item">
+                        <p class="label">Пол:</p>  
+                        <form class="choose-item-radio">
+                            <label for="female" class="custom-radio">
+                                
+                                <input type="radio" name="sex" value="женщина" id="female" checked>
+                                <span class="choose-item-info">Женщина</span>
+                            </label>
+                            <label for="male" class="custom-radio">
+                                <input type="radio" name="sex" value="мужчина" id="male">
+                                <span class="choose-item-info">Мужчина</span>
+                                
+                            </label>
+                        </form>
+                    </div>
+
+                    <div class="choose-item">
+                        <label for="age" class="label">Возраст:</label>
+                        <input type="range" name="age" id="age" min="1" max="4" value="1">
+                        
+                        <div class="age-text">
+                            <span class="choose-item-info">до 14</span>
+                            <span class="choose-item-info">до 30</span>
+                            <span class="choose-item-info">до 50</span>
+                            <span class="choose-item-info">старше 50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-right">
+                <button class="button btn" data-part="1">
+                    <span>Сохранить</span>
+                </button>
+                <div class="mistake">Пожалуйста, заполните все поля</div>
+            </div>
+
+            <div class="result">
+                <p class="result-text">День рождения</p>
+                <div class="edit" data-part="1">
+                    <p class="edit-text">Редактировать</p>
+                    <img src="icons/pen.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <button class="button submit" >
+            <span>Отправить</span>
+        </button>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

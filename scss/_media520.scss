@@ -1,0 +1,25 @@
+@media screen and (max-width: 520px) {
+    body {
+        padding-top: 20px;
+    }
+
+    header {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    #age {
+        width: 252px;
+    }
+
+    .age-text {
+        column-gap: 7px;
+    }
+}

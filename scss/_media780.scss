@@ -1,0 +1,28 @@
+@media screen and (max-width: 780px) {
+    body {
+        padding-top: 50px;
+    }
+
+    header {
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    section {
+        margin: 0 20px;
+        min-width: auto;
+        padding: 36px;
+    }
+
+    .choose {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .button {
+        align-self: end;
+    }
+}
