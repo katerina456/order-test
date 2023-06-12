@@ -22,4 +22,9 @@
     .age-text span::before {
         bottom: 41px;
     }
+
+    .choose-item-input {
+        display: grid;
+        grid-template-columns: 82% 26px;
+    }
 }
